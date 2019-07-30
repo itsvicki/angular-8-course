@@ -9,7 +9,9 @@ import {
   AfterContentChecked,
   AfterViewInit,
   AfterViewChecked,
-  OnDestroy
+  OnDestroy,
+  ViewChild,
+  ElementRef
 } from '@angular/core';
 
 @Component({
@@ -28,41 +30,44 @@ export class ServerElementComponent implements
   OnDestroy {
   @Input('srvElement') element: {type: string, name: string, content: string};
   @Input() name: string;
+  @ViewChild('heading', {static: true}) header: ElementRef;
 
   constructor() {
-    console.log('constructor called!');
+    // console.log('constructor called!');
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges called!');
-    console.log(changes);
+    // console.log('ngOnChanges called!');
+    // console.log(changes);
   }
 
   ngOnInit() {
     console.log('ngOnInit called!');
+    console.log('Text content = ' + this.header.nativeElement.textContent);
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck called!');
+    // console.log('ngDoCheck called!');
   }
 
   ngAfterContentInit() {
-    console.log('ngAfterContentInit called!');
+    // console.log('ngAfterContentInit called!');
   }
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked called!');
+    // console.log('ngAfterContentChecked called!');
   }
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit called!');
+    console.log('Text content = ' + this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked called!');
+    // console.log('ngAfterViewChecked called!');
   }
 
   ngOnDestroy() {
-    console.log('ngOnDestroy called!');
+    // console.log('ngOnDestroy called!');
   }
 }
