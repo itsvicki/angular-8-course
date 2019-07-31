@@ -14,4 +14,17 @@
       </ol>
     </div>
   </div>
+
+  <div class="row">
+    <app-game-control
+      (gameStarted)="onGameStarted($event)"></app-game-control>
+
+    <app-odd
+      *ngFor="let oddComponent of oddComponents"
+      [incrementingNumber]="oddComponent.number"></app-odd>
+
+    <app-even
+      *ngFor="let evenComponent of evenComponents"
+      [incrementingNumber]="evenComponent.number"></app-even>
+  </div>
 </div>
