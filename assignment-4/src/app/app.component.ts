@@ -6,19 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  oddComponents = [];
-  evenComponents = [];
+  oddComponents: number[] = [];
+  evenComponents: number[] = [];
 
-  onGameStarted(envData: {incrementingNumber: number}) {
-    if (envData.incrementingNumber % 2 === 0) {
-      this.evenComponents.push({
-        number: envData.incrementingNumber
-      });
+  onGameStarted(number: number) {
+    if (number % 2 === 0) {
+      this.evenComponents.push(number);
     }
     else {
-      this.oddComponents.push({
-        number: envData.incrementingNumber
-      });
+      this.oddComponents.push(number);
     }
   }
 }

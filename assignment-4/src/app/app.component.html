@@ -20,11 +20,11 @@
       (gameStarted)="onGameStarted($event)"></app-game-control>
 
     <app-odd
-      *ngFor="let oddComponent of oddComponents"
-      [incrementingNumber]="oddComponent.number"></app-odd>
+      *ngFor="let oddNumber of oddComponents"
+      [incrementingNumber]="oddNumber"></app-odd>
 
     <app-even
-      *ngFor="let evenComponent of evenComponents"
-      [incrementingNumber]="evenComponent.number"></app-even>
+      *ngFor="let evenNumber of evenComponents"
+      [incrementingNumber]="evenNumber"></app-even>
   </div>
 </div>
