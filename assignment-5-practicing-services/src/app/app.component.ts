@@ -13,8 +13,5 @@ export class AppComponent implements OnInit {
 
   constructor(private usersServices: UsersService) { }
 
-  ngOnInit() {
-    this.activeUsers = this.usersServices.activeUsers;
-    this.inactiveUsers = this.usersServices.inactiveUsers;
-  }
+  
 }

@@ -2,13 +2,13 @@ export class CounterService {
   activeToInactiveCount = 0;
   inactiveToActiveCount = 0;
 
-  addActiveToInactiveCount() {
+  incrementActiveToInactiveCount() {
     this.activeToInactiveCount++;
 
     console.log(this.activeToInactiveCount);
   }
 
-  addInactiveToActiveCount() {
+  incrementInactiveToActiveCount() {
     this.inactiveToActiveCount++;
 
     console.log(this.inactiveToActiveCount);
