@@ -15,7 +15,6 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
-  // After adding an ingredient, inform other interested components about the change
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice());
