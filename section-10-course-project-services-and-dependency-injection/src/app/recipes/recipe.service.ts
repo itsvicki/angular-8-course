@@ -2,6 +2,8 @@ import { Injectable, EventEmitter } from "@angular/core";
 
 import { Recipe } from "./recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
+import { ShoppingListService } from "../shopping-list/shopping-list.service";
+import { ThrowStmt } from "@angular/compiler";
 
 @Injectable({providedIn: 'root'})
 export class RecipeService {
@@ -26,10 +28,16 @@ export class RecipeService {
       ])
   ];
 
+  constructor(private shoppingListService: ShoppingListService) { }
+
   getRecipes() {
     // If return recipes without slice, it's passing a reference type
     // meaning any alterations made my another component will affect the array
     // in this service. Slice provides a copy of the array
     return this.recipes.slice();
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.shoppingListService.addIngredients(ingredients);
   }
 }
