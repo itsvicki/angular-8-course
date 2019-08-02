@@ -19,10 +19,10 @@ export class ShoppingListComponent implements OnInit {
 
     // When ShoppingEditComponent() recieves a request for a ingredient to be added
     // capture it & add to ingredients array
-    this.shoppingListService.ingredientAdded
+    this.shoppingListService.ingredientsChanged
       .subscribe(
-        (ingredient: Ingredient) => {
-          this.ingredients.push(ingredient);
+        (ingredient: Ingredient[]) => {
+          this.ingredients = ingredient;
         }
       );
   }
